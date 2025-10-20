@@ -13,10 +13,9 @@ function OpenPage() {
             <Button text={name}/>
         ))}
         </div>
-        
-      
     </div>
   )
 }
+
 
 export default OpenPage
