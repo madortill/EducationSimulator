@@ -9,22 +9,23 @@
     direction: rtl;
 }
 
-.role-btns-container{
+.role-btns-container {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .main-headline {
     background: linear-gradient(90deg, white, #4ADEFF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* font-weight: bold; */
-  font-family: ploni-bold-aaa;
-  font-size: 4rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* font-weight: bold; */
+    font-family: ploni-bold-aaa;
+    font-size: 4rem;
 }
 
 .instruct-open-page {
     letter-spacing: 0.2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
