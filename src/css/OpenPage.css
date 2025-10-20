@@ -1,0 +1,30 @@
+#open-page {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #091A33, #143d79);
+    /* z-index: 5; */
+    direction: rtl;
+}
+
+.role-btns-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-headline {
+    background: linear-gradient(90deg, white, #4ADEFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-weight: bold; */
+  font-family: ploni-bold-aaa;
+  font-size: 4rem;
+}
+
+.instruct-open-page {
+    letter-spacing: 0.2rem;
+    margin-bottom: 5rem;
+}
