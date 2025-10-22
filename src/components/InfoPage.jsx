@@ -20,7 +20,6 @@ function InfoPage({ chosenRole, setChosenRole }) {
         <p className="role-name">{data.roles[chosenRole][0]}</p>
       </div>
 <InfoCarousel chosenRole={chosenRole}/>
-
     </div>
   );
 }
