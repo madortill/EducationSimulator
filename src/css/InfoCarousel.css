@@ -1,0 +1,182 @@
+/* ===========================
+   📐 GENERAL LAYOUT
+=========================== */
+.carousel-inner {
+  direction: rtl;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Each slide — only the active one shows */
+.carousel-item {
+  text-align: right;
+  color: white;
+  height: 25rem;
+  background: transparent;
+  display: none;               /* hide all slides by default */
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item.active {
+  display: flex;               /* show only active one */
+}
+
+/* Carousel frame */
+.carousel {
+  border: 3px solid #8CE3ED;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 40rem;
+  margin: 0 auto;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===========================
+   🔄 ARROW POSITIONS
+=========================== */
+.carousel-control-prev {
+  right: 0;
+  left: auto;
+}
+
+.carousel-control-next {
+  left: 0;
+  right: auto;
+}
+
+/* ===========================
+   ➤ CUSTOM ARROWS (TURQUOISE)
+=========================== */
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  background: none !important;
+  opacity: 1 !important;
+}
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-image: none !important;
+  background-color: transparent !important;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow shape */
+.custom-carousel .carousel-control-prev-icon::after,
+.custom-carousel .carousel-control-next-icon::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid #000000;
+  border-right: 3px solid #000000;
+  transition: transform 0.2s ease;
+}
+
+/* RTL Direction */
+.custom-carousel .carousel-control-prev-icon::after {
+  transform: rotate(45deg); /* right arrow */
+}
+
+.custom-carousel .carousel-control-next-icon::after {
+  transform: rotate(225deg); /* left arrow */
+}
+
+/* Hover */
+.custom-carousel .carousel-control-prev:hover .carousel-control-prev-icon::after {
+  transform: scale(1.1) rotate(45deg);
+}
+
+.custom-carousel .carousel-control-next:hover .carousel-control-next-icon::after {
+  transform: scale(1.1) rotate(225deg);
+}
+
+/* ===========================
+   ❌ HIDE ARROWS AT ENDS
+=========================== */
+.custom-carousel.hide-prev .carousel-control-prev,
+.custom-carousel.hide-next .carousel-control-next {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease;
+}
+
+/* ===========================
+   ⚪ DOT INDICATORS
+=========================== */
+.carousel-indicators {
+  bottom: 15px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #8CE3ED;
+  transition: all 0.3s ease;
+  margin: 0 6px;
+}
+
+.carousel-indicators .active {
+  background-color: #5fc0d2;
+  width: 14px;
+  height: 14px;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+  background-color: #6cd8e5;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   🧾 TEXT STYLING
+=========================== */
+.info-text {
+  color: white;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: right;
+  direction: rtl;
+  width: 90%;
+  white-space: pre-wrap;
+}
+
+/* center text vertically */
+.carousel-caption {
+  position: static;
+  width: 90%;
+  color: white;
+  text-align: right;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* ===========================
+   🔁 REVERSE SLIDE DIRECTION (RTL)
+=========================== */
+/* When going NEXT (Bootstrap normally slides left), push to the RIGHT */
+.carousel-inner > .carousel-item-next.carousel-item-start,
+.carousel-inner > .carousel-item-prev.carousel-item-end {
+  transform: translateX(100%) !important;
+}
+
+/* When going PREV (Bootstrap normally slides right), push to the LEFT */
+.carousel-inner > .carousel-item-prev.carousel-item-start,
+.carousel-inner > .carousel-item-next.carousel-item-end {
+  transform: translateX(-100%) !important;
+}
+

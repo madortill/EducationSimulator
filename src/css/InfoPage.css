@@ -1,0 +1,40 @@
+.info-page {
+    height: 100%;
+    width: 100vw;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-icon {
+    width: 2rem;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.home-icon:hover {
+    width: 2.3rem;
+    position: relative;
+
+}
+
+
+.head-container {
+    display: flex;
+    display: flex;
+    position: absolute;
+    right: 0rem;
+    margin: 1rem;
+    top: 0rem;
+    color: white;
+}
+
+.role-name {
+   
+    font-family: "ploni-bold-aaa";
+font-size: 2rem;
+margin: 0rem;
+margin-right: 1rem;
+}

@@ -1,11 +1,11 @@
 import React from 'react'
 import "../css/Button.css";
 
-function Button({ text, href = "#" }) {
+function Button({ text, onClick}) {
   return (
-    <a className="btn-1" href={href}>
+    <a className="btn-1" onClick={onClick} >
       {text.map((info,index) => (
-      <p className={`text-btn ${index === 1 ? "second-text-btn" : ""}`}>{info}</p>
+      <p key={index} className={`text-btn ${index === 1 ? "second-text-btn" : ""}`}>{info}</p>
 
       ))}
     
