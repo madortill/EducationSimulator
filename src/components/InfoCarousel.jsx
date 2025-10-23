@@ -4,9 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/InfoCarousel.css";
 import data from "../data.json";
 
-function InfoCarousel({chosenRole}) {
+function InfoCarousel({chosenRole, activeIndex, setActiveIndex}) {
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
     setActiveIndex(selectedIndex);
