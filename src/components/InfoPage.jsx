@@ -17,6 +17,7 @@ function InfoPage({ chosenRole, setChosenRole }) {
   function backToOpenPage() {
     setChosenRole(-1);
   }
+  
   return (
     <div className="info-page">
       <div className="head-container">
