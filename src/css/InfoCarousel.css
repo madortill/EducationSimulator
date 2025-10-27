@@ -26,7 +26,7 @@
 /* Carousel frame */
 .carousel {
   border: 3px solid #8CE3ED;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   overflow: hidden;
   width: 40rem;
   margin: 0 auto;
@@ -145,7 +145,7 @@
   font-size: 1.15rem;
   line-height: 1.6;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   direction: rtl;
   width: 90%;
   white-space: pre-wrap;

@@ -3,13 +3,15 @@ import data from "../data.json";
 import "../css/InfoPage.css";
 import homeIcon from "../assets/images/icons/home.svg";
 import InfoCarousel from "./InfoCarousel";
+import VideosContainer from "./VideosContainer";
 
 function InfoPage({ chosenRole, setChosenRole }) {
+  const [showVideos, setShowVideos] = useState(false);
   const [introInfoIndex, setIntroInfoIndex] = useState(0);
   const [isIndexTwo, setIsIndexTwo] = useState(false);
 
   useEffect(() => {
-    if(introInfoIndex === 2) {
+    if (introInfoIndex === 2) {
       setIsIndexTwo(true);
     }
   }, [introInfoIndex]);
@@ -17,7 +19,7 @@ function InfoPage({ chosenRole, setChosenRole }) {
   function backToOpenPage() {
     setChosenRole(-1);
   }
-  
+
   return (
     <div className="info-page">
       <div className="head-container">
@@ -29,15 +31,25 @@ function InfoPage({ chosenRole, setChosenRole }) {
         />
         <p className="role-name">{data.roles[chosenRole][0]}</p>
       </div>
-      <InfoCarousel chosenRole={chosenRole} activeIndex={introInfoIndex} setActiveIndex={setIntroInfoIndex}/>
-      {isIndexTwo &&
-       <div class="arrow">
-       <span></span>
-       <span></span>
-       <span></span>
-   </div>
+      {!showVideos && (
+        <>
+          <InfoCarousel
+            chosenRole={chosenRole}
+            activeIndex={introInfoIndex}
+            setActiveIndex={setIntroInfoIndex}
+          />
+          {isIndexTwo && (
+            <div className="arrow" onClick={() => {setShowVideos(true)}}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          )}
+        </>
+      )}
+      {showVideos && 
+      <VideosContainer chosenRole={chosenRole}/>
       }
-     
     </div>
   );
 }

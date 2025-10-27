@@ -56,10 +56,10 @@ margin-right: 1rem;
     display: block;
     width: 3rem;
     height: 3rem;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    border-bottom: 0.6rem solid #4ADEFF;
+    border-right: 0.6rem solid #4ADEFF;
     transform: rotate(45deg);
-    margin: -10px;
+    /* margin: -10px; */
     animation: animate 2s infinite;
 }
 

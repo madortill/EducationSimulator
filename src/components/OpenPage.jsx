@@ -4,6 +4,7 @@ import data from "../data.json";
 import "../css/OpenPage.css";
 import GradientText from "./GradientText.jsx";
 import InfoPage from "./InfoPage.jsx";
+import LomdaInfo from './LomdaInfo.jsx';
 
 function OpenPage() {
   const [chosenRole, setChosenRole] = useState(-1);
@@ -16,6 +17,7 @@ function OpenPage() {
       {/* <p className='main-headline'>סימולטור חיל חינוך</p> */}
       {chosenRole === -1 && (
         <>
+        <LomdaInfo/>
           <GradientText>סימולטור חיל חינוך</GradientText>
           <p className="instruct-open-page">- בחרו בתפקיד -</p>
           <div className="role-btns-container" >

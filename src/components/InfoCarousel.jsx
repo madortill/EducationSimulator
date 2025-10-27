@@ -31,7 +31,7 @@ function InfoCarousel({chosenRole, activeIndex, setActiveIndex}) {
   nextLabel=""
   prevLabel=""
   touch={false}   // keep no-swipe if you want
-  slide={true}    // MUST be true for animation
+  slide={false}    // MUST be true for animation
 >
         { data["game-tree"][chosenRole].description.map((slide, index) => (
           <Carousel.Item key={index}>

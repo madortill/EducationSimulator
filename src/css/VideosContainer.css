@@ -1,0 +1,70 @@
+.container {
+    /* border: 3px solid #8CE3ED; */
+    border-radius: 0.6rem;
+    overflow: hidden;
+    width: 40rem;
+    margin: 0 auto;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: -4px 4px 0.7rem rgba(0, 0, 0, 0.1); /* x-offset y-offset blur color */
+background-color: #0E2A53;
+}
+
+.play-again-icon {
+    position: absolute;
+    width: 3rem;
+    top: 0rem;
+    left: 0rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+
+}
+
+  .play-again-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+
+  .title-choices {
+    font-family: ploni-bold-aaa;
+    position: absolute;
+    top: 1rem;
+    font-size: 1.5rem;
+  }
+.youtube-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .youtube-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ימלא את כל השטח בלי לשבור יחס */
+  }
+
+.video-ended-message {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 1.5rem; */
+    /* background-color: #000; */
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .video-ended-message .btn-1 {
+    width: 18rem;
+    height: 16rem;
+    padding: 0.5rem;
+  }
+.video-ended-message .second-text-btn {
+    font-size: 1rem;
+}
