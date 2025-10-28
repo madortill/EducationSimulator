@@ -2,51 +2,61 @@
     /* border: 3px solid #8CE3ED; */
     border-radius: 0.6rem;
     overflow: hidden;
-    width: 40rem;
+    width: 50rem;
     margin: 0 auto;
-    height: 25rem;
+    height: 35rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    box-shadow: -4px 4px 0.7rem rgba(0, 0, 0, 0.1); /* x-offset y-offset blur color */
-background-color: #0E2A53;
+    box-shadow: -4px 4px 0.7rem rgba(0, 0, 0, 0.1);
+    /* x-offset y-offset blur color */
+    background-color: #0E2A53;
 }
 
 .play-again-icon {
     position: absolute;
     width: 3rem;
-    top: 0rem;
-    left: 0rem;
+    top: 1rem;
+    left: 1rem;
     transition: transform 0.2s ease, opacity 0.2s ease;
     cursor: pointer;
 
 }
 
-  .play-again-icon:hover {
+.play-again-icon:hover {
     transform: scale(1.1);
     opacity: 0.85;
-  }
+}
 
-  .title-choices {
+.title-choices {
     font-family: ploni-bold-aaa;
-    position: absolute;
-    top: 1rem;
-    font-size: 1.5rem;
-  }
+    /* position: absolute;
+    top: 3rem; */
+    font-size: 2rem;
+}
+
+.choices-btns-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .youtube-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
-  
-  .youtube-container iframe {
+}
+
+.youtube-container iframe {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ימלא את כל השטח בלי לשבור יחס */
-  }
+    object-fit: cover;
+    /* ימלא את כל השטח בלי לשבור יחס */
+}
 
 .video-ended-message {
     width: 100%;
@@ -54,17 +64,90 @@ background-color: #0E2A53;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     /* font-size: 1.5rem; */
     /* background-color: #000; */
     color: #fff;
     font-size: 1rem;
-  }
+}
 
-  .video-ended-message .btn-1 {
+.video-ended-message .btn-1 {
     width: 18rem;
     height: 16rem;
     padding: 0.5rem;
-  }
+}
+
 .video-ended-message .second-text-btn {
     font-size: 1rem;
 }
+
+.text-mashov {
+    font-size: 1.5rem;
+    padding: 3rem;
+    margin-top: -2rem;
+}
+
+.dir-mashov {
+    font-size: 2rem;
+    margin-top: -2rem;
+}
+
+/* 🌐 LOADING OVERLAY */
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, #0E2A53 0%, #091A33 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: white;
+    font-family: 'ploni-bold-aaa', sans-serif;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+  
+  /* 💫 Animated glowing spinner */
+  .loader {
+    width: 70px;
+    height: 70px;
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    border-top: 4px solid #4ADEFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite, glow 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(77, 222, 255, 0.3);
+    margin-bottom: 1.5rem;
+  }
+  
+  .loading-text {
+    font-size: 1rem;
+    color: #b8eaff;
+    letter-spacing: 0.1rem;
+    animation: blink 2s ease-in-out infinite;
+  }
+  
+  /* ✨ Animations */
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(77, 222, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(77, 222, 255, 0.8);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
