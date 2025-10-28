@@ -27,7 +27,6 @@ const LomdaInfo = () => {
       >
         i
       </p>
-
       {showInfo && (
         <div className="info-container ">
         
