@@ -18,5 +18,4 @@ function Button({ text, onClick }) {
     </a>
   );
 }
-
 export default Button;
