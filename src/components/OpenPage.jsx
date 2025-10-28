@@ -5,6 +5,8 @@ import "../css/OpenPage.css";
 import GradientText from "./GradientText.jsx";
 import InfoPage from "./InfoPage.jsx";
 import LomdaInfo from './LomdaInfo.jsx';
+import FullScreenButton from "./FullScreenButton.jsx";
+
 
 function OpenPage() {
   const [chosenRole, setChosenRole] = useState(-1);
@@ -14,7 +16,8 @@ function OpenPage() {
   }
   return (
     <div id="open-page">
-      {/* <p className='main-headline'>סימולטור חיל חינוך</p> */}
+          {/* ✅ כפתור המסך המלא */}
+          <FullScreenButton />
       {chosenRole === -1 && (
         <>
         <LomdaInfo/>
