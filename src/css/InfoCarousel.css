@@ -147,8 +147,10 @@
   margin: 0;
   /* text-align: center; */
   direction: rtl;
-  width: 90%;
+  /* width: 90%; */
+  width: 100%;
   white-space: pre-wrap;
+  line-height: 1.8;
 }
 
 /* center text vertically */

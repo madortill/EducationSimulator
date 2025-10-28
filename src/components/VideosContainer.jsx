@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import YouTube from "react-youtube";
 import Button from "./Button.jsx";
 import playAgainIcon from '../assets/images/icons/again.png';
+import GradientText from "./GradientText.jsx";
 
 function VideosContainer({ chosenRole }) {
   const roleTree = data["game-tree"][chosenRole];
@@ -80,19 +81,24 @@ function VideosContainer({ chosenRole }) {
             title="צפה שוב בסצנה"
           />
 
-          <p className="title-choices">אז מה תעשי?</p>
+          
 
           {/* כפתורי הבחירה */}
           {currentNode.choices?.length > 0 ? (
-            currentNode.choices.map((choice, i) => (
+            <>
+            <p className="title-choices">אז מה תעשי?</p>
+           { currentNode.choices.map((choice, i) => (
               <Button
                 key={i}
                 text={choice.text}
                 onClick={() => handleChoiceClick(choice)}
               />
-            ))
+            ))}
+            </>
+            
           ) : (
-            <p>בהצלחה במשוב!</p>
+            // <p className="to-the-mashov-title">בהצלחה במשוב!</p>
+            <GradientText>וקדימה למשוב!</GradientText>
           )}
         </div>
       )}
