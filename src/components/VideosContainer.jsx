@@ -111,7 +111,7 @@ function VideosContainer({ chosenRole }) {
               <GradientText>כל הכבוד!</GradientText>
               <p className="text-mashov">{roleTree.mashov}</p>
               <GradientText className="dir-mashov">
-                פנ/י למסביר לקבלת למשוב
+                פנ/י למסביר לקבלת משוב
               </GradientText>
             </>
           )}
