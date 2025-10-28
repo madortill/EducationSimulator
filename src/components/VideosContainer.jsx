@@ -81,8 +81,6 @@ function VideosContainer({ chosenRole }) {
             title="צפה שוב בסצנה"
           />
 
-          
-
           {/* כפתורי הבחירה */}
           {currentNode.choices?.length > 0 ? (
             <>
@@ -95,7 +93,6 @@ function VideosContainer({ chosenRole }) {
               />
             ))}
             </>
-            
           ) : (
             // <p className="to-the-mashov-title">בהצלחה במשוב!</p>
             <GradientText>וקדימה למשוב!</GradientText>
