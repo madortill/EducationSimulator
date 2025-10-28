@@ -73,7 +73,6 @@ function VideosContainer({ chosenRole }) {
           <p className="loading-text">טוען את הסרטון...</p>
         </div>
       )}
-
       {!ended ? (
         <div className="youtube-container">
           <YouTube
