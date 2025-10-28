@@ -14,6 +14,7 @@ function OpenPage() {
     const indexRole = Number(event.currentTarget.id);
     setChosenRole(indexRole);
   }
+  
   return (
     <div id="open-page">
       {/* ✅ כפתור המסך המלא */}
