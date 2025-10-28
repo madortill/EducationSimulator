@@ -29,7 +29,6 @@ const LomdaInfo = () => {
       </p>
       {showInfo && (
         <div className="info-container ">
-        
           <ul className="info-list">
             {infoArray.map(({ title, values }) => (
               <li key={title} className="info">
