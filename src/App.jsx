@@ -9,7 +9,7 @@ import OpenPage from "./components/OpenPage";
 function App() {
   return (
     <div className="app">
-        <img src={logo} className="logo" alt="logo" />
+        {/* <img src={logo} className="logo" alt="logo" /> */}
 <OpenPage/>
 <img src={tillLogo} className="till-logo" alt="logo" />
 

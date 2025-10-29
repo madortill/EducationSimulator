@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../css/FullScreenButton.css";
 import { Maximize2 } from "lucide-react";
 
-function FullScreenButton() {
+function FullScreenButton({ onStart }) {
   const [isFullScreen, setIsFullScreen] = useState(
     document.fullscreenElement !== null
   );
-  const [skipped, setSkipped] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
-  // האזנה לשינויים במסך מלא
   useEffect(() => {
     const handleChange = () => {
       setIsFullScreen(document.fullscreenElement !== null);
@@ -20,10 +19,10 @@ function FullScreenButton() {
   const handleFullScreen = async () => {
     const root = document.documentElement;
 
-    // אם הדפדפן לא תומך בכלל במסך מלא
     if (!document.fullscreenEnabled) {
       console.warn("Fullscreen not supported — continuing anyway");
-      setSkipped(true);
+      setHidden(true);
+      onStart?.(); // מנגן סאונד
       return;
     }
 
@@ -31,15 +30,21 @@ function FullScreenButton() {
       if (!document.fullscreenElement) {
         await root.requestFullscreen();
       }
+      setHidden(true);
+      onStart?.(); // מנגן סאונד
     } catch (err) {
       console.warn("Failed to enter fullscreen:", err);
-      // לא נתמך או נחסם → ממשיכים בלי מסך מלא
-      setSkipped(true);
+      setHidden(true);
+      onStart?.();
     }
   };
 
-  // אם כבר במסך מלא או המשתמש דילג — לא מציגים את המסך
-  if (isFullScreen || skipped) return null;
+  const handleSkip = () => {
+    setHidden(true);
+    onStart?.(); // גם כאן נגן סאונד
+  };
+
+  if (isFullScreen || hidden) return null;
 
   return (
     <div className="fullscreen-overlay">
@@ -50,11 +55,7 @@ function FullScreenButton() {
           <span>כניסה למסך מלא</span>
         </button>
 
-        {/* כפתור המשך ללא מסך מלא */}
-        <button
-          className="fullscreen-skip"
-          onClick={() => setSkipped(true)}
-        >
+        <button className="fullscreen-skip" onClick={handleSkip}>
           המשך ללא מסך מלא
         </button>
       </div>
